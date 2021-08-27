@@ -25,26 +25,34 @@ class _BottomNavPageState extends State<BottomNavPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.orange[900],
-        onPressed: () {
-          setState(() {
-            _currentindex = 0;
-          });
-        },
-        child: Icon(Icons.home),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      // floatingActionButton: FloatingActionButton(
+      //   backgroundColor: Colors.orange[900],
+      //   onPressed: () {
+      //     setState(() {
+      //       _currentindex = 0;
+      //     });
+      //   },
+      //   child: Icon(Icons.home),
+      // ),
+      // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
         color: Colors.orange[900],
-        shape: CircularNotchedRectangle(),
+        // shape: CircularNotchedRectangle(),
         child: Container(
-          height: 80,
+          height: 60,
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
+                InkWell(
+                  child: Icon(Icons.home, size: 40, color: Colors.white),
+                  onTap: () {
+                    setState(() {
+                      _currentindex = 0;
+                    });
+                  },
+                ),
                 InkWell(
                   child: Icon(Icons.menu, size: 40, color: Colors.white),
                   onTap: () {

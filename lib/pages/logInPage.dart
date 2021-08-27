@@ -129,7 +129,6 @@ class _LoginpageState extends State<Loginpage> {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) => Findfood()));
                     }
-
                     setState(() {
                       showSpinner = false;
                     });

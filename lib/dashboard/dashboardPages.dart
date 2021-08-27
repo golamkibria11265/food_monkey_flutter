@@ -1,10 +1,12 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:food_monkey/customWidget/boldTextWidget.dart';
 import 'package:food_monkey/customWidget/normalTextWidget.dart';
+import 'package:food_monkey/dashboard/items.dart';
+import 'package:food_monkey/dashboard/itemsService.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({Key? key}) : super(key: key);
-
   @override
   _DashboardState createState() => _DashboardState();
 }
@@ -12,6 +14,8 @@ class Dashboard extends StatefulWidget {
 class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
     return SafeArea(
       child: Container(
         child: SingleChildScrollView(
@@ -20,7 +24,7 @@ class _DashboardState extends State<Dashboard> {
             child: Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(8, 20, 8, 10),
+                  padding: const EdgeInsets.fromLTRB(18, 10, 20, 10),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -38,7 +42,7 @@ class _DashboardState extends State<Dashboard> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.only(left: 10),
+                      padding: const EdgeInsets.only(left: 20),
                       child: NormalTextWidget("Delivering to", 13),
                     ),
                   ],
@@ -47,14 +51,63 @@ class _DashboardState extends State<Dashboard> {
                 Row(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.only(left: 10),
+                      padding: const EdgeInsets.only(left: 20),
                       child: BoldTextWidget("Current location", 16),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(left: 70),
+                      padding: const EdgeInsets.only(left: 50),
                       child: Icon(Icons.arrow_downward, color: Colors.orange),
                     ),
                   ],
+                ),
+                SizedBox(height: 20),
+                Material(
+                  color: Colors.red,
+                  borderRadius: BorderRadius.all(Radius.circular(30)),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.grey[300],
+                      border: Border.all(
+                        color: Colors.transparent,
+                      ),
+                      borderRadius: BorderRadius.all(Radius.circular(30)),
+                    ),
+                    height: height / 14.337,
+                    width: width / 1.1,
+                    child: TextField(
+                      cursorColor: Colors.black,
+                      decoration: new InputDecoration(
+                          icon: Padding(
+                            padding: const EdgeInsets.only(
+                                left: 15, bottom: 11, top: 15, right: 0),
+                            child: new Icon(Icons.search),
+                          ),
+                          border: InputBorder.none,
+                          contentPadding: EdgeInsets.only(
+                              left: 0, bottom: 11, top: 15, right: 15),
+                          hintText: "Search Food"),
+                      onChanged: (value) {
+                        //var searchFood = value;
+                      },
+                    ),
+                  ),
+                ),
+                SizedBox(height: 20),
+                FutureBuilder<List<Items>>(
+                  future: ReadJsonData(context),
+                  builder: (context, snapshot) {
+                    if (snapshot.hasData) {
+                      return ListView.builder(
+                        itemCount: snapshot.data!.length,
+                        shrinkWrap: true,
+                        itemBuilder: (BuildContext context, int index) {
+                          Items items = snapshot.data![index];
+                          return Text(items.name);
+                        },
+                      );
+                    }
+                    return CircularProgressIndicator();
+                  },
                 ),
               ],
             ),

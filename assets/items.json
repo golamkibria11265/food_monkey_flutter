@@ -1,0 +1,33 @@
+[
+      {
+        "name": "Burger",
+        "rootUri": "https://cdn.fstoppers.com/styles/xlarge/s3/photos/180395/12/02/3b893b1f03a3860c8df054a03dee9dbe.jpg",
+        "rating": "4.90",
+        "type": "Fast Food"
+      },
+      {
+        "name": "Burger",
+        "rootUri": "https://cache.desktopnexus.com/thumbseg/2400/2400300-bigthumbnail.jpg",
+        "rating": "5.00",
+        "type": "Fast Food"
+      },
+      {
+        "name": "Pitzza",
+        "rootUri": "https://c4.wallpaperflare.com/wallpaper/363/606/522/italian-pizza-wallpaper-preview.jpg",
+        "rating": "4.90",
+        "type": "Fast Food"
+      },
+      {
+        "name": "Pitzza",
+        "rootUri": "https://www.surreyapp.com/Uploads/UploadCoverFiles/b0b655b4.jpg",
+        "rating": "5.00",
+        "type": "Fast Food"
+      },
+      {
+        "name": "French Fries",
+        "rootUri": "https://cdn.cdnparenting.com/articles/2020/02/27120224/FRENCH-FRIES.jpg",
+        "rating": "5.00",
+        "type": "Fast Food"
+      }
+   
+    ]
