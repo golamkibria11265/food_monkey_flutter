@@ -18,8 +18,8 @@
         "type": "Fast Food"
       },
       {
-        "name": "Pitzza",
-        "rootUri": "https://www.surreyapp.com/Uploads/UploadCoverFiles/b0b655b4.jpg",
+        "name": "keto",
+        "rootUri": "https://purewows3.imgix.net/images/articles/2019_03/uprising-foods-keto-bread-grilled-cheese.jpg?auto=format,compress&cs=strip",
         "rating": "5.00",
         "type": "Fast Food"
       },
@@ -28,6 +28,71 @@
         "rootUri": "https://cdn.cdnparenting.com/articles/2020/02/27120224/FRENCH-FRIES.jpg",
         "rating": "5.00",
         "type": "Fast Food"
+      },
+      {
+        "name": "BBQ Feast",
+        "rootUri": "https://media.gettyimages.com/photos/bbq-feast-picture-id694177316",
+        "rating": "5.00",
+        "type": "Fast Food"
+      },
+      {
+        "name": "Unsplash",
+        "rootUri": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+        "rating": "5.00",
+        "type": "Fast Food"
+      },
+      {
+        "name": "Mixed Feast",
+        "rootUri": "https://images.unsplash.com/photo-1572098873382-f8e4bf925781?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80",
+        "rating": "5.00",
+        "type": "Fast Food"
+      },
+      {
+        "name": "Samocha",
+        "rootUri": "https://www.kilobiriyanilanka.com/images/cafe2.jpg",
+        "rating": "5.00",
+        "type": "Fast Food"
+      },
+      {
+        "name": "Singara",
+        "rootUri": "https://us.123rf.com/450wm/bhofack2/bhofack21406/bhofack2140600068/29029035-homemade-fried-indian-samosas-with-mint-chutney-sauce.jpg?ver=6",
+        "rating": "5.00",
+        "type": "Fast Food"
+      },
+      {
+        "name": "Petis",
+        "rootUri": "https://t4.ftcdn.net/jpg/01/07/78/99/360_F_107789996_eCrxkKMwWWypMgbgv40VRHS645HocZr7.jpg",
+        "rating": "5.00",
+        "type": "Fast Food"
+      },
+      {
+        "name": "Kabab",
+        "rootUri": "https://www.swaad.at/wp-content/uploads/2018/11/Chicken-Tikka-1024x609.jpg",
+        "rating": "5.00",
+        "type": "Fast Food"
+      },
+      {
+        "name": "Chicken",
+        "rootUri": "https://previews.123rf.com/images/espies/espies1707/espies170700098/82364843-indian-spicy-chicken-curry-or-masala-chicken-with-prominent-leg-piece-popular-recipe-from-india-sele.jpg",
+        "rating": "5.00",
+        "type": "Fast Food"
+      },
+      {
+        "name": "Pitha",
+        "rootUri": "https://hips.hearstapps.com/es.h-cdn.co/mcres/images/mi-casa/recetas/empanadas-caseras/1530586-1-esl-ES/las-empanadas-caseras-mas-ricas.jpg?crop=1xw:0.6666666666666666xh;center,top&resize=1200:*",
+        "rating": "5.00",
+        "type": "Fast Food"
+      },
+      {
+        "name": "Petis",
+        "rootUri": "https://us.123rf.com/450wm/alexbaidj/alexbaidj1601/alexbaidj160100047/50648502-empanadas-caseras-con-carne-empanadas-de-carne-originales-argentina-con-salsa-chimichurri-verde.jpg?ver=6",
+        "rating": "5.00",
+        "type": "Fast Food"
+      },
+      {
+        "name": "Cake",
+        "rootUri": "https://thumbs.dreamstime.com/b/chocolate-cake-dark-background-chocolate-cake-dark-background-restaurant-188808242.jpg",
+        "rating": "5.00",
+        "type": "Fast Food"
       }
-   
-    ]
+]

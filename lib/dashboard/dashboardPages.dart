@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:food_monkey/customWidget/boldTextWidget.dart';
 import 'package:food_monkey/customWidget/normalTextWidget.dart';
+import 'package:food_monkey/customWidget/productWidget.dart';
 import 'package:food_monkey/dashboard/items.dart';
 import 'package:food_monkey/dashboard/itemsService.dart';
 
@@ -17,14 +18,16 @@ class _DashboardState extends State<Dashboard> {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return SafeArea(
-      child: Container(
-        child: SingleChildScrollView(
-          scrollDirection: Axis.vertical,
-          child: Center(
+      child: Scaffold(
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(height / 4.46),
+          child: Container(
+            color: Colors.white,
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(18, 10, 20, 10),
+                  padding: const EdgeInsets.fromLTRB(18, 0, 20, 10),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -32,7 +35,7 @@ class _DashboardState extends State<Dashboard> {
                       InkWell(
                         child: Icon(Icons.shopping_cart, size: 35),
                         onTap: () {
-                          //write to go to cart page
+                          //write to get to the cart page
                         },
                       )
                     ],
@@ -47,7 +50,7 @@ class _DashboardState extends State<Dashboard> {
                     ),
                   ],
                 ),
-                SizedBox(height: 5),
+                SizedBox(height: height / 160.5818),
                 Row(
                   children: [
                     Padding(
@@ -60,7 +63,7 @@ class _DashboardState extends State<Dashboard> {
                     ),
                   ],
                 ),
-                SizedBox(height: 20),
+                SizedBox(height: height / 80.2909),
                 Material(
                   color: Colors.red,
                   borderRadius: BorderRadius.all(Radius.circular(30)),
@@ -87,30 +90,41 @@ class _DashboardState extends State<Dashboard> {
                               left: 0, bottom: 11, top: 15, right: 15),
                           hintText: "Search Food"),
                       onChanged: (value) {
-                        //var searchFood = value;
+                        //write to search the food
                       },
                     ),
                   ),
                 ),
-                SizedBox(height: 20),
-                FutureBuilder<List<Items>>(
-                  future: ReadJsonData(context),
-                  builder: (context, snapshot) {
-                    if (snapshot.hasData) {
-                      return ListView.builder(
-                        itemCount: snapshot.data!.length,
-                        shrinkWrap: true,
-                        itemBuilder: (BuildContext context, int index) {
-                          Items items = snapshot.data![index];
-                          return Text(items.name);
-                        },
-                      );
-                    }
-                    return CircularProgressIndicator();
-                  },
-                ),
               ],
             ),
+          ),
+        ),
+        body: SafeArea(
+          child: FutureBuilder<List<Items>>(
+            future: ReadJsonData(context),
+            builder: (context, snapshot) {
+              if (snapshot.hasData) {
+                return ListView.builder(
+                  itemCount: snapshot.data!.length,
+                  shrinkWrap: true,
+                  itemBuilder: (BuildContext context, int index) {
+                    Items items = snapshot.data![index];
+                    return InkWell(
+                      child: ProductWidget(
+                          image: items.rootUri,
+                          name: items.name,
+                          rating: items.rating,
+                          type: items.type),
+                      onTap: () {
+                        print(items
+                            .name); //write to get to the details of the product
+                      },
+                    );
+                  },
+                );
+              }
+              return CircularProgressIndicator();
+            },
           ),
         ),
       ),
